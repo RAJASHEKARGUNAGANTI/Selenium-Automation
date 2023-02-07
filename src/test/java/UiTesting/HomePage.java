@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.Select;
 import java.util.List;
 
 public class HomePage {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         System.setProperty("webdriver.chrome.driver", "D:\\Automation2\\src\\main\\resources\\drivers\\chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--incognito");
@@ -30,6 +30,9 @@ public class HomePage {
                 break;
             }
         }
+        Thread.sleep(2000);
         driver.findElementByXPath("/html/body/div[1]/form/div[5]/button").click();
+        Thread.sleep(3000);
+        driver.close();
     }
 }
